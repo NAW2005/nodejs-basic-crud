@@ -1,0 +1,17 @@
+app.get("/user", (req, res) => {
+  res.status(200).json({ msg: "wellcome our route!!" });
+});
+app.post("/user", (req, res) => {
+  res.status(200).json({ msg: "user is success" });
+});
+
+app.patch("/user/:id/:name", (req, res, next) => {
+  let id = req.params.id;
+  let name = req.params.name;
+  res.status(200).json({ msg: `edit user id is ${id} and name is ${name}` });
+});
+
+app.delete("/user/:id", (req, res, next) => {
+  let id = req.params.id;
+  res.json({ masg: `Delete id is ${id}` });
+});
